@@ -1,0 +1,18 @@
+pip install pandas
+import pandas as pd
+
+ Load the dataset
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+column_names = ["sepal_length", "sepal_width", "petal_length", "petal_width", "species"]
+iris_df = pd.read_csv(url, header=None, names=column_names)
+ Display the first few rows
+print(iris_df.head())
+ Check data types
+print(iris_df.dtypes)
+
+ Check for missing values
+print(iris_df.isnull().sum())
+ Drop missing values
+cleaned_iris_df = iris_df.dropna()
+ Fill missing values with the mean
+cleaned_iris_df = iris_df.fillna(iris_df.mean())

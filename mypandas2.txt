@@ -1,0 +1,10 @@
+import pandas as pd
+
+ Load your dataset
+data = pd.read_csv('your_dataset.csv')  # Replace with your actual file
+ Get basic statistics
+basic_stats = data.describe()
+print(basic_stats)
+ Group by categorical column and compute mean
+grouped_stats = data.groupby('species')['sepal_length'].mean().reset_index()
+print(grouped_stats)
